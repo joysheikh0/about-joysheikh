@@ -1,0 +1,682 @@
+/* =========================================
+   BASIC RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background: #f5f7fa;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.profile-image {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e5e7eb;
+    flex-shrink: 0;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-info h1 {
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+.profile-info p {
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navigation a {
+    font-size: 14px;
+    color: #444;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    color: #0066ff;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #eef4ff,
+        #ffffff
+    );
+}
+
+.hero .container {
+    text-align: center;
+}
+
+.welcome {
+    color: #0066ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h2 {
+    max-width: 800px;
+    margin: 0 auto 20px;
+
+    font-size: 52px;
+    line-height: 1.15;
+}
+
+.hero p:not(.welcome) {
+    max-width: 650px;
+    margin: 0 auto 30px;
+
+    color: #666;
+    font-size: 17px;
+}
+
+.primary-button {
+    display: inline-block;
+
+    background: #0066ff;
+    color: #ffffff;
+
+    padding: 13px 25px;
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.primary-button:hover {
+    background: #004ecc;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+.section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.section:nth-child(even) {
+    background: #f7f9fc;
+}
+
+.section-label {
+    color: #0066ff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.section-text {
+    max-width: 750px;
+    color: #666;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   EXPERIENCE
+========================================= */
+
+.experience-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.experience-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+
+    padding: 30px;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.experience-year {
+    display: inline-block;
+
+    color: #0066ff;
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.experience-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.experience-card p {
+    color: #666;
+}
+
+
+/* =========================================
+   UPDATES
+========================================= */
+
+.updates-list {
+    margin-top: 40px;
+}
+
+.update-card {
+    max-width: 800px;
+
+    background: #ffffff;
+    border-left: 4px solid #0066ff;
+
+    padding: 25px 30px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.update-card span {
+    color: #0066ff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.update-card h3 {
+    font-size: 23px;
+    margin: 8px 0;
+}
+
+.update-card p {
+    color: #666;
+}
+
+
+/* =========================================
+   SOCIAL MEDIA
+========================================= */
+
+.social-section {
+    text-align: center;
+}
+
+.social-section .section-text {
+    margin: 0 auto;
+}
+
+.social-links {
+    margin-top: 35px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.social-links a {
+    padding: 11px 20px;
+
+    border: 1px solid #d9dee7;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: #0066ff;
+    color: #ffffff;
+    border-color: #0066ff;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: #111827;
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 25px 0;
+}
+
+.footer p {
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .header .container {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    .experience-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header .container {
+        gap: 15px;
+    }
+
+    .profile-info h1 {
+        font-size: 18px;
+    }
+
+    .navigation {
+        gap: 12px;
+    }
+
+    .navigation a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .hero p:not(.welcome) {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section h2 {
+        font-size: 30px;
+    }
+
+    .experience-card {
+        padding: 22px;
+    }
+
+    .update-card {
+        padding: 20px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .social-links a {
+        text-align: center;
+    }
+}
+
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #e5e7eb;
+}
+
+.about-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.about-content h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #666;
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+.about-content strong {
+    color: #222;
+}
+
+
+/* =========================================
+   WHAT I DO
+========================================= */
+
+.what-i-do {
+    margin-top: 100px;
+}
+
+.what-i-do > h2 {
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.focus-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 25px;
+
+    transition: 0.3s;
+}
+
+.focus-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.focus-icon {
+    color: #0066ff;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.focus-card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.focus-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   ABOUT - TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-image {
+        max-width: 500px;
+    }
+
+    .about-image img {
+        height: 500px;
+    }
+
+    .focus-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   ABOUT - MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .about-layout {
+        gap: 30px;
+    }
+
+    .about-image img {
+        height: 400px;
+    }
+
+    .about-content h2 {
+        font-size: 30px;
+    }
+
+    .what-i-do {
+        margin-top: 70px;
+    }
+
+    .what-i-do > h2 {
+        font-size: 30px;
+    }
+
+    .focus-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .focus-card {
+        padding: 22px;
+    }
+}
+
+
+
+/* =========================================
+   SOCIAL MEDIA CARDS
+========================================= */
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    max-width: 700px;
+    margin: 35px auto 0;
+    gap: 15px;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 16px 18px;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+.social-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-color: #0066ff;
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f0f4ff;
+    color: #0066ff;
+
+    font-weight: bold;
+    font-size: 18px;
+
+    flex-shrink: 0;
+}
+
+.social-card span:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-card strong {
+    font-size: 15px;
+    color: #222;
+}
+
+.social-card small {
+    margin-top: 2px;
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .social-links {
+        grid-template-columns: 1fr;
+    }
+
+}
