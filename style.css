@@ -1,7 +1,13 @@
-<<<<<<< HEAD
-/* =========================================
-   BASIC RESET
-========================================= */
+/* =========================================================
+   MD. NAIMUR RAHAMAN JOY
+   PERSONAL PORTFOLIO WEBSITE
+   CLEAN & RESPONSIVE CSS
+========================================================= */
+
+
+/* =========================================================
+   1. BASIC RESET
+========================================================= */
 
 * {
     margin: 0;
@@ -17,13 +23,28 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     background: #f5f7fa;
-    color: #222;
+    color: #1f2937;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
 }
 
 a {
     text-decoration: none;
     color: inherit;
 }
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   2. COMMON CONTAINER
+========================================================= */
 
 .container {
     width: 90%;
@@ -32,83 +53,146 @@ a {
 }
 
 
-/* =========================================
-   HEADER
-========================================= */
+/* =========================================================
+   3. HEADER
+========================================================= */
 
 .header {
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e5e7eb;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .header .container {
-    min-height: 75px;
+    min-height: 78px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 30px;
 }
 
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
+
+/* =========================================================
+   4. PROFILE IMAGE
+========================================================= */
 
 .profile-image {
-    width: 52px;
-    height: 52px;
+    width: 54px;
+    height: 54px;
+
     border-radius: 50%;
     overflow: hidden;
+
     background: #e5e7eb;
+
     flex-shrink: 0;
+
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .profile-image img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
     display: block;
 }
 
+
+/* =========================================================
+   5. PROFILE INFORMATION
+========================================================= */
+
+.profile-info {
+    flex: 1;
+}
+
 .profile-info h1 {
     font-size: 20px;
-    margin-bottom: 2px;
+    line-height: 1.2;
+
+    color: #111827;
+
+    margin-bottom: 4px;
 }
 
 .profile-info p {
     font-size: 13px;
-    color: #777;
+    color: #6b7280;
 }
 
 
-/* =========================================
-   NAVIGATION
-========================================= */
+/* =========================================================
+   6. NAVIGATION
+========================================================= */
 
 .navigation {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    min-height: 48px;
+
     display: flex;
     align-items: center;
-    gap: 24px;
+    justify-content: flex-end;
+
+    gap: 25px;
 }
 
 .navigation a {
+    position: relative;
+
+    padding: 8px 0;
+
     font-size: 14px;
-    color: #444;
-    transition: 0.3s;
+    font-weight: 600;
+
+    color: #4b5563;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.navigation a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #0066ff;
+
+    transition: width 0.3s ease;
 }
 
 .navigation a:hover {
     color: #0066ff;
+    transform: translateY(-1px);
+}
+
+.navigation a:hover::after {
+    width: 100%;
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+/* =========================================================
+   7. HERO SECTION
+========================================================= */
 
 .hero {
     min-height: 620px;
@@ -116,67 +200,140 @@ a {
     display: flex;
     align-items: center;
 
-    background: linear-gradient(
-        135deg,
-        #eef4ff,
-        #ffffff
-    );
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(0, 102, 255, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #eef4ff 0%,
+            #ffffff 55%,
+            #f8fbff 100%
+        );
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 102, 255, 0.06);
+
+    top: -120px;
+    left: -100px;
 }
 
 .hero .container {
+    position: relative;
+    z-index: 1;
+
     text-align: center;
 }
 
 .welcome {
     color: #0066ff;
+
     font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
     margin-bottom: 18px;
 }
 
 .hero h2 {
-    max-width: 800px;
+    max-width: 850px;
+
     margin: 0 auto 20px;
 
-    font-size: 52px;
+    font-size: 54px;
     line-height: 1.15;
+
+    color: #111827;
 }
 
 .hero p:not(.welcome) {
-    max-width: 650px;
-    margin: 0 auto 30px;
+    max-width: 680px;
 
-    color: #666;
+    margin: 0 auto 20px;
+
+    color: #667085;
+
     font-size: 17px;
 }
+
+.hero-subtitle {
+    color: #0066ff !important;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+.hero-tagline {
+    font-weight: 700;
+
+    color: #111827 !important;
+
+    margin-top: 8px !important;
+    margin-bottom: 30px !important;
+}
+
+
+/* =========================================================
+   8. PRIMARY BUTTON
+========================================================= */
 
 .primary-button {
     display: inline-block;
 
+    padding: 14px 28px;
+
     background: #0066ff;
     color: #ffffff;
 
-    padding: 13px 25px;
-    border-radius: 8px;
+    border-radius: 10px;
 
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 700;
 
-    transition: 0.3s;
+    box-shadow:
+        0 8px 20px rgba(0, 102, 255, 0.20);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .primary-button:hover {
-    background: #004ecc;
-    transform: translateY(-2px);
+    background: #0052cc;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 102, 255, 0.28);
 }
 
 
-/* =========================================
-   GENERAL SECTIONS
-========================================= */
+/* =========================================================
+   9. GENERAL SECTIONS
+========================================================= */
 
 .section {
     padding: 100px 0;
+
     background: #ffffff;
 }
 
@@ -186,108 +343,354 @@ a {
 
 .section-label {
     color: #0066ff;
+
     font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
     margin-bottom: 10px;
 }
 
 .section h2 {
-    font-size: 38px;
+    color: #111827;
+
+    font-size: 40px;
+    line-height: 1.2;
+
     margin-bottom: 20px;
 }
 
 .section-text {
     max-width: 750px;
-    color: #666;
+
+    color: #667085;
+
     font-size: 16px;
 }
 
 
-/* =========================================
-   EXPERIENCE
-========================================= */
+/* =========================================================
+   10. ABOUT SECTION
+========================================================= */
+
+.about-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.8fr)
+        minmax(0, 1.2fr);
+
+    gap: 60px;
+
+    align-items: center;
+
+    margin-top: 45px;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 410px;
+
+    margin: 0 auto;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background: #e5e7eb;
+
+    box-shadow:
+        0 20px 45px rgba(15, 23, 42, 0.10);
+
+    border: 6px solid #ffffff;
+}
+
+.about-image img {
+    width: 100%;
+    height: 450px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.04);
+}
+
+.about-content h2 {
+    font-size: 40px;
+
+    color: #111827;
+
+    margin-bottom: 22px;
+}
+
+.about-content p {
+    color: #667085;
+
+    margin-bottom: 18px;
+
+    font-size: 16px;
+}
+
+.about-content strong {
+    color: #111827;
+}
+
+
+/* =========================================================
+   11. WHAT I DO
+========================================================= */
+
+.what-i-do {
+    margin-top: 105px;
+}
+
+.what-i-do > h2 {
+    font-size: 40px;
+
+    margin-bottom: 35px;
+}
+
+.focus-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.focus-card {
+    position: relative;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    padding: 28px 24px;
+
+    min-height: 220px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.focus-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #0066ff;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+}
+
+.focus-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #cfe0ff;
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.09);
+}
+
+.focus-card:hover::before {
+    transform: scaleX(1);
+}
+
+.focus-icon {
+    color: #0066ff;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.focus-card h3 {
+    color: #111827;
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.focus-card p {
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   12. EXPERIENCE
+========================================================= */
 
 .experience-list {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 25px;
+
     margin-top: 40px;
 }
 
 .experience-card {
+    position: relative;
+
     background: #ffffff;
+
     border: 1px solid #e5e7eb;
 
     padding: 30px;
-    border-radius: 12px;
 
-    transition: 0.3s;
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.experience-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: #0066ff;
 }
 
 .experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+
+    border-color: #d7e5ff;
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.08);
 }
 
 .experience-year {
     display: inline-block;
 
     color: #0066ff;
-    font-size: 14px;
-    font-weight: bold;
+
+    font-size: 13px;
+    font-weight: 800;
 
     margin-bottom: 10px;
 }
 
 .experience-card h3 {
+    color: #111827;
+
     font-size: 22px;
+
     margin-bottom: 10px;
 }
 
 .experience-card p {
-    color: #666;
+    color: #667085;
+
+    font-size: 15px;
 }
 
 
-/* =========================================
-   UPDATES
-========================================= */
+/* =========================================================
+   13. UPDATES
+========================================================= */
 
 .updates-list {
     margin-top: 40px;
 }
 
 .update-card {
-    max-width: 800px;
+    position: relative;
+
+    max-width: 850px;
 
     background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
     border-left: 4px solid #0066ff;
 
-    padding: 25px 30px;
+    border-radius: 0 14px 14px 0;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 28px 30px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.update-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.08);
 }
 
 .update-card span {
     color: #0066ff;
+
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
 }
 
 .update-card h3 {
+    color: #111827;
+
     font-size: 23px;
-    margin: 8px 0;
+
+    margin: 8px 0 10px;
 }
 
 .update-card p {
-    color: #666;
+    color: #667085;
+
+    font-size: 15px;
 }
 
 
-/* =========================================
-   SOCIAL MEDIA
-========================================= */
+/* =========================================================
+   14. SOCIAL / CONTACT SECTION
+========================================================= */
 
 .social-section {
     text-align: center;
@@ -297,258 +700,170 @@ a {
     margin: 0 auto;
 }
 
-.social-links {
-    margin-top: 35px;
 
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
+/* =========================================================
+   15. SOCIAL MEDIA GRID
+========================================================= */
+
+.social-links {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(250px, 1fr));
+
+    max-width: 700px;
+
+    margin: 40px auto 0;
+
+    gap: 15px;
 }
 
-.social-links a {
-    padding: 11px 20px;
+.social-card {
+    display: flex;
 
-    border: 1px solid #d9dee7;
-    border-radius: 8px;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px 18px;
 
     background: #ffffff;
 
-    font-size: 14px;
-    font-weight: bold;
+    border: 1px solid #e1e6ef;
 
-    transition: 0.3s;
+    border-radius: 14px;
+
+    text-align: left;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
 }
 
-.social-links a:hover {
+.social-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #bcd4ff;
+
+    background: #fbfdff;
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.social-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: #eef4ff;
+
+    color: #0066ff;
+
+    font-weight: 800;
+
+    font-size: 17px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.social-card:hover .social-icon {
     background: #0066ff;
     color: #ffffff;
-    border-color: #0066ff;
+}
+
+.social-card span:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.social-card strong {
+    color: #111827;
+
+    font-size: 15px;
+
+    margin-bottom: 2px;
+}
+
+.social-card small {
+    color: #777f8c;
+
+    font-size: 12px;
 }
 
 
-/* =========================================
-   FOOTER
-========================================= */
+/* =========================================================
+   16. FOOTER
+========================================================= */
 
 .footer {
     background: #111827;
+
     color: #ffffff;
 
     text-align: center;
 
-    padding: 25px 0;
+    padding: 28px 0;
 }
 
 .footer p {
-    font-size: 13px;
     color: #cbd5e1;
+
+    font-size: 13px;
 }
 
 
-/* =========================================
-   TABLET
-========================================= */
+/* =========================================================
+   17. TABLET
+========================================================= */
 
 @media (max-width: 900px) {
-
-    .header .container {
-        flex-direction: column;
-        padding: 15px 0;
-    }
-
-    .navigation {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero {
-        min-height: 550px;
-    }
-
-    .hero h2 {
-        font-size: 42px;
-    }
-
-    .experience-list {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
 
     .container {
         width: 92%;
     }
 
-    .header {
-        position: relative;
-    }
-
     .header .container {
-        gap: 15px;
-    }
-
-    .profile-info h1 {
-        font-size: 18px;
+        min-height: 72px;
     }
 
     .navigation {
-        gap: 12px;
-    }
+        width: 92%;
 
-    .navigation a {
-        font-size: 13px;
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 18px;
     }
 
     .hero {
-        min-height: 500px;
+        min-height: 560px;
     }
 
     .hero h2 {
-        font-size: 34px;
+        font-size: 44px;
     }
-
-    .hero p:not(.welcome) {
-        font-size: 15px;
-    }
-
-    .section {
-        padding: 70px 0;
-    }
-
-    .section h2 {
-        font-size: 30px;
-    }
-
-    .experience-card {
-        padding: 22px;
-    }
-
-    .update-card {
-        padding: 20px;
-    }
-
-    .social-links {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .social-links a {
-        text-align: center;
-    }
-}
-
-
-/* =========================================
-   ABOUT SECTION
-========================================= */
-
-.about-layout {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 60px;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.about-image {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    border-radius: 18px;
-    overflow: hidden;
-    background: #e5e7eb;
-}
-
-.about-image img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    display: block;
-}
-
-.about-content h2 {
-    font-size: 38px;
-    margin-bottom: 20px;
-}
-
-.about-content p {
-    color: #666;
-    margin-bottom: 18px;
-    font-size: 16px;
-}
-
-.about-content strong {
-    color: #222;
-}
-
-
-/* =========================================
-   WHAT I DO
-========================================= */
-
-.what-i-do {
-    margin-top: 100px;
-}
-
-.what-i-do > h2 {
-    font-size: 38px;
-    margin-bottom: 35px;
-}
-
-.focus-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.focus-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 25px;
-
-    transition: 0.3s;
-}
-
-.focus-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.focus-icon {
-    color: #0066ff;
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.focus-card h3 {
-    font-size: 19px;
-    margin-bottom: 10px;
-}
-
-.focus-card p {
-    color: #666;
-    font-size: 14px;
-}
-
-
-/* =========================================
-   ABOUT - TABLET
-========================================= */
-
-@media (max-width: 900px) {
 
     .about-layout {
         grid-template-columns: 1fr;
-        gap: 40px;
+
+        gap: 45px;
     }
 
     .about-image {
@@ -562,505 +877,20 @@ a {
     .focus-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-
-/* =========================================
-   ABOUT - MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
-    .about-layout {
-        gap: 30px;
-    }
-
-    .about-image img {
-        height: 400px;
-    }
-
-    .about-content h2 {
-        font-size: 30px;
-    }
-
-    .what-i-do {
-        margin-top: 70px;
-    }
-
-    .what-i-do > h2 {
-        font-size: 30px;
-    }
-
-    .focus-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .focus-card {
-        padding: 22px;
-    }
-}
-
-
-
-/* =========================================
-   SOCIAL MEDIA CARDS
-========================================= */
-
-.social-links {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-    max-width: 700px;
-    margin: 35px auto 0;
-    gap: 15px;
-}
-
-.social-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    padding: 16px 18px;
-
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-
-    text-align: left;
-
-    transition: 0.3s;
-}
-
-.social-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    border-color: #0066ff;
-}
-
-.social-icon {
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 10px;
-
-    background: #f0f4ff;
-    color: #0066ff;
-
-    font-weight: bold;
-    font-size: 18px;
-
-    flex-shrink: 0;
-}
-
-.social-card span:last-child {
-    display: flex;
-    flex-direction: column;
-}
-
-.social-card strong {
-    font-size: 15px;
-    color: #222;
-}
-
-.social-card small {
-    margin-top: 2px;
-    color: #777;
-    font-size: 12px;
-}
-
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    .social-links {
-        grid-template-columns: 1fr;
-    }
-
-=======
-/* =========================================
-   BASIC RESET
-========================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    background: #f5f7fa;
-    color: #222;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-
-/* =========================================
-   HEADER
-========================================= */
-
-.header {
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.header .container {
-    min-height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.profile-image {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: #e5e7eb;
-    flex-shrink: 0;
-}
-
-.profile-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.profile-info h1 {
-    font-size: 20px;
-    margin-bottom: 2px;
-}
-
-.profile-info p {
-    font-size: 13px;
-    color: #777;
-}
-
-
-/* =========================================
-   NAVIGATION
-========================================= */
-
-.navigation {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.navigation a {
-    font-size: 14px;
-    color: #444;
-    transition: 0.3s;
-}
-
-.navigation a:hover {
-    color: #0066ff;
-}
-
-
-/* =========================================
-   HERO
-========================================= */
-
-.hero {
-    min-height: 620px;
-
-    display: flex;
-    align-items: center;
-
-    background: linear-gradient(
-        135deg,
-        #eef4ff,
-        #ffffff
-    );
-}
-
-.hero .container {
-    text-align: center;
-}
-
-.welcome {
-    color: #0066ff;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 18px;
-}
-
-.hero h2 {
-    max-width: 800px;
-    margin: 0 auto 20px;
-
-    font-size: 52px;
-    line-height: 1.15;
-}
-
-.hero p:not(.welcome) {
-    max-width: 650px;
-    margin: 0 auto 30px;
-
-    color: #666;
-    font-size: 17px;
-}
-
-.primary-button {
-    display: inline-block;
-
-    background: #0066ff;
-    color: #ffffff;
-
-    padding: 13px 25px;
-    border-radius: 8px;
-
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.primary-button:hover {
-    background: #004ecc;
-    transform: translateY(-2px);
-}
-
-
-/* =========================================
-   GENERAL SECTIONS
-========================================= */
-
-.section {
-    padding: 100px 0;
-    background: #ffffff;
-}
-
-.section:nth-child(even) {
-    background: #f7f9fc;
-}
-
-.section-label {
-    color: #0066ff;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.section h2 {
-    font-size: 38px;
-    margin-bottom: 20px;
-}
-
-.section-text {
-    max-width: 750px;
-    color: #666;
-    font-size: 16px;
-}
-
-
-/* =========================================
-   EXPERIENCE
-========================================= */
-
-.experience-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.experience-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-
-    padding: 30px;
-    border-radius: 12px;
-
-    transition: 0.3s;
-}
-
-.experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.experience-year {
-    display: inline-block;
-
-    color: #0066ff;
-    font-size: 14px;
-    font-weight: bold;
-
-    margin-bottom: 10px;
-}
-
-.experience-card h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.experience-card p {
-    color: #666;
-}
-
-
-/* =========================================
-   UPDATES
-========================================= */
-
-.updates-list {
-    margin-top: 40px;
-}
-
-.update-card {
-    max-width: 800px;
-
-    background: #ffffff;
-    border-left: 4px solid #0066ff;
-
-    padding: 25px 30px;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
-.update-card span {
-    color: #0066ff;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.update-card h3 {
-    font-size: 23px;
-    margin: 8px 0;
-}
-
-.update-card p {
-    color: #666;
-}
-
-
-/* =========================================
-   SOCIAL MEDIA
-========================================= */
-
-.social-section {
-    text-align: center;
-}
-
-.social-section .section-text {
-    margin: 0 auto;
-}
-
-.social-links {
-    margin-top: 35px;
-
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.social-links a {
-    padding: 11px 20px;
-
-    border: 1px solid #d9dee7;
-    border-radius: 8px;
-
-    background: #ffffff;
-
-    font-size: 14px;
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    background: #0066ff;
-    color: #ffffff;
-    border-color: #0066ff;
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-.footer {
-    background: #111827;
-    color: #ffffff;
-
-    text-align: center;
-
-    padding: 25px 0;
-}
-
-.footer p {
-    font-size: 13px;
-    color: #cbd5e1;
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-    .header .container {
-        flex-direction: column;
-        padding: 15px 0;
-    }
-
-    .navigation {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero {
-        min-height: 550px;
-    }
-
-    .hero h2 {
-        font-size: 42px;
-    }
 
     .experience-list {
         grid-template-columns: 1fr;
     }
+
+    .section {
+        padding: 85px 0;
+    }
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* =========================================================
+   18. MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
 
@@ -1068,193 +898,135 @@ a {
         width: 92%;
     }
 
+    /* Header */
+
     .header {
         position: relative;
     }
 
     .header .container {
-        gap: 15px;
+        min-height: auto;
+
+        padding: 16px 0;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+    }
+
+    .profile-image {
+        width: 48px;
+        height: 48px;
     }
 
     .profile-info h1 {
-        font-size: 18px;
+        font-size: 17px;
     }
 
+    .profile-info p {
+        font-size: 11px;
+    }
+
+
+    /* Navigation */
+
     .navigation {
-        gap: 12px;
+        width: 92%;
+
+        min-height: auto;
+
+        padding: 8px 0 14px;
+
+        gap: 14px;
     }
 
     .navigation a {
-        font-size: 13px;
+        font-size: 12px;
     }
 
+
+    /* Hero */
+
     .hero {
-        min-height: 500px;
+        min-height: 560px;
+
+        padding: 70px 0;
+    }
+
+    .welcome {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 15px;
     }
 
     .hero h2 {
         font-size: 34px;
+
+        line-height: 1.2;
+
+        margin-bottom: 18px;
     }
 
     .hero p:not(.welcome) {
         font-size: 15px;
+
+        line-height: 1.7;
+
+        margin-bottom: 18px;
     }
+
+    .hero-tagline {
+        margin-bottom: 28px !important;
+    }
+
+    .primary-button {
+        padding: 13px 22px;
+
+        font-size: 13px;
+    }
+
+
+    /* Sections */
 
     .section {
         padding: 70px 0;
     }
 
+    .section-label {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
     .section h2 {
         font-size: 30px;
+
+        margin-bottom: 17px;
     }
 
-    .experience-card {
-        padding: 22px;
+    .section-text {
+        font-size: 15px;
     }
 
-    .update-card {
-        padding: 20px;
-    }
 
-    .social-links {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .social-links a {
-        text-align: center;
-    }
-}
-
-
-/* =========================================
-   ABOUT SECTION
-========================================= */
-
-.about-layout {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 60px;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.about-image {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    border-radius: 18px;
-    overflow: hidden;
-    background: #e5e7eb;
-}
-
-.about-image img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    display: block;
-}
-
-.about-content h2 {
-    font-size: 38px;
-    margin-bottom: 20px;
-}
-
-.about-content p {
-    color: #666;
-    margin-bottom: 18px;
-    font-size: 16px;
-}
-
-.about-content strong {
-    color: #222;
-}
-
-
-/* =========================================
-   WHAT I DO
-========================================= */
-
-.what-i-do {
-    margin-top: 100px;
-}
-
-.what-i-do > h2 {
-    font-size: 38px;
-    margin-bottom: 35px;
-}
-
-.focus-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.focus-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 25px;
-
-    transition: 0.3s;
-}
-
-.focus-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.focus-icon {
-    color: #0066ff;
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.focus-card h3 {
-    font-size: 19px;
-    margin-bottom: 10px;
-}
-
-.focus-card p {
-    color: #666;
-    font-size: 14px;
-}
-
-
-/* =========================================
-   ABOUT - TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-    .about-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .about-image {
-        max-width: 500px;
-    }
-
-    .about-image img {
-        height: 500px;
-    }
-
-    .focus-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-/* =========================================
-   ABOUT - MOBILE
-========================================= */
-
-@media (max-width: 600px) {
+    /* About */
 
     .about-layout {
         gap: 30px;
+
+        margin-top: 30px;
+    }
+
+    .about-image {
+        max-width: 100%;
+
+        border-width: 4px;
+
+        border-radius: 18px;
     }
 
     .about-image img {
@@ -1264,6 +1036,13 @@ a {
     .about-content h2 {
         font-size: 30px;
     }
+
+    .about-content p {
+        font-size: 15px;
+    }
+
+
+    /* What I Do */
 
     .what-i-do {
         margin-top: 70px;
@@ -1275,92 +1054,139 @@ a {
 
     .focus-grid {
         grid-template-columns: 1fr;
+
+        gap: 16px;
     }
 
     .focus-card {
-        padding: 22px;
+        min-height: auto;
+
+        padding: 23px;
     }
-}
 
 
+    /* Experience */
 
-/* =========================================
-   SOCIAL MEDIA CARDS
-========================================= */
+    .experience-list {
+        grid-template-columns: 1fr;
 
-.social-links {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-    max-width: 700px;
-    margin: 35px auto 0;
-    gap: 15px;
-}
+        gap: 17px;
 
-.social-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+        margin-top: 30px;
+    }
 
-    padding: 16px 18px;
+    .experience-card {
+        padding: 25px 22px;
+    }
 
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-
-    text-align: left;
-
-    transition: 0.3s;
-}
-
-.social-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    border-color: #0066ff;
-}
-
-.social-icon {
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 10px;
-
-    background: #f0f4ff;
-    color: #0066ff;
-
-    font-weight: bold;
-    font-size: 18px;
-
-    flex-shrink: 0;
-}
-
-.social-card span:last-child {
-    display: flex;
-    flex-direction: column;
-}
-
-.social-card strong {
-    font-size: 15px;
-    color: #222;
-}
-
-.social-card small {
-    margin-top: 2px;
-    color: #777;
-    font-size: 12px;
-}
+    .experience-card h3 {
+        font-size: 20px;
+    }
 
 
-/* Mobile */
+    /* Updates */
 
-@media (max-width: 600px) {
+    .updates-list {
+        margin-top: 30px;
+    }
+
+    .update-card {
+        padding: 22px;
+
+        border-radius: 0 12px 12px 0;
+    }
+
+    .update-card h3 {
+        font-size: 20px;
+    }
+
+
+    /* Social */
 
     .social-links {
         grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 30px;
     }
 
->>>>>>> 27fa54bf5aca56c0fe11a879d7edaef70a29bbc9
+    .social-card {
+        padding: 15px;
+    }
+
+    .social-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    /* Footer */
+
+    .footer {
+        padding: 24px 0;
+    }
+
+    .footer p {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   19. VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .profile-info h1 {
+        font-size: 15px;
+    }
+
+    .profile-info p {
+        font-size: 10px;
+    }
+
+    .navigation {
+        gap: 10px;
+    }
+
+    .navigation a {
+        font-size: 11px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .hero p:not(.welcome) {
+        font-size: 14px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .about-image img {
+        height: 340px;
+    }
+}
+
+
+/* =========================================================
+   20. ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
 }
