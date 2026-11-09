@@ -742,15 +742,28 @@ a {
         background 0.3s ease;
 }
 
-.social-card:hover {
-    transform: translateY(-4px);
+/* Facebook Hover */
+.social-card:hover .facebook-icon {
+    background: #1877F2;
+    color: #ffffff;
+}
 
-    border-color: #bcd4ff;
+/* Instagram Hover */
+.social-card:hover .instagram-icon {
+    background: #E4405F;
+    color: #ffffff;
+}
 
-    background: #fbfdff;
+/* LinkedIn Hover */
+.social-card:hover .linkedin-icon {
+    background: #0A66C2;
+    color: #ffffff;
+}
 
-    box-shadow:
-        0 12px 30px rgba(15, 23, 42, 0.08);
+/* YouTube Hover */
+.social-card:hover .youtube-icon {
+    background: #FF0000;
+    color: #ffffff;
 }
 
 .social-icon {
@@ -766,44 +779,36 @@ a {
 
     border-radius: 11px;
 
-    background: #eef4ff;
+    background: #f4f6fa;
 
-    color: #0066ff;
+    color: #333333;
 
-    font-weight: 800;
-
-    font-size: 17px;
+    font-size: 21px;
 
     transition:
         background 0.3s ease,
-        color 0.3s ease;
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.social-card:hover .social-icon {
-    background: #0066ff;
-    color: #ffffff;
+/* Facebook */
+.facebook-icon {
+    color: #1877F2;
 }
 
-.social-card span:last-child {
-    display: flex;
-
-    flex-direction: column;
-
-    min-width: 0;
+/* Instagram */
+.instagram-icon {
+    color: #E4405F;
 }
 
-.social-card strong {
-    color: #111827;
-
-    font-size: 15px;
-
-    margin-bottom: 2px;
+/* LinkedIn */
+.linkedin-icon {
+    color: #0A66C2;
 }
 
-.social-card small {
-    color: #777f8c;
-
-    font-size: 12px;
+/* YouTube */
+.youtube-icon {
+    color: #FF0000;
 }
 
 
